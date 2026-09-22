@@ -38,7 +38,7 @@
 #define TOFF_INIT 20
 
 //Numero de sensores por defecto
-#define MAX_SENSORES 12
+#define MAX_SENSORES 9
 
 //Distancia maxima y minima por defecto (Mts)
 #define MAX_DIST 5 
@@ -245,7 +245,6 @@ void init_uart(){
     uart_init(UART_USADA, BAUD_RATE);
     gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);    
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
-
 }
 
 /*! \brief Inicializar I2C para la comunicacion con la IMU
@@ -930,7 +929,7 @@ int main(){
     rc = rclc_subscription_init_default(
         &subscriber_seguridad, 
         &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int8), 
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32), 
         TOPIC_NAME_DIST_SEG);
     if (RCL_RET_OK != rc) {
         error_func(6);
@@ -1025,7 +1024,6 @@ int main(){
         }
 
     }
-
     return 0;
-
 }
+

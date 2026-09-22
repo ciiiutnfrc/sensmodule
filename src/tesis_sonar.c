@@ -242,9 +242,9 @@ void init_uart(){
         pico_serial_transport_read
     );
 
-    uart_init(UART_USADA, BAUD_RATE);
-    gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);    
-    gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
+    //uart_init(UART_USADA, BAUD_RATE);
+    //gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);    
+    //gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
 }
 
 /*! \brief Inicializar I2C para la comunicacion con la IMU
